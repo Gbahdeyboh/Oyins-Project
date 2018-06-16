@@ -75,7 +75,7 @@ body{
 	align-items: center;
 }
 .bar_icon{
-	display: inline-block;
+	display: none;
 	color: white;
 	cursor: pointer;
 }
@@ -96,6 +96,14 @@ body{
 @keyframes slideIn{
 	from{
 		transform: translate(-1000px, 0px);
+	}
+}
+@media only screen and (max-width: 450px){
+	.headingTitle{
+		letter-spacing: .1em;
+	}
+	.slideInMenu{
+		width: 70%;
 	}
 }
 .closeIcon{
@@ -258,12 +266,26 @@ body{
 	height: 30px;
 }
 .patientsMedicalHistory{
+	display: none;
 	margin-top: -5em;
 	width: 99%;
 	height: 85vh;
 	background: white;
-	display: block;
 	overflow-y: scroll;
+}
+.patientsMedicalHistory::-webkit-scrollbar {
+    width: 10px;
+}
+ 
+.patientsMedicalHistory::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    -webkit-border-radius: 10px;
+}
+ 
+.patientsMedicalHistory::-webkit-scrollbar-thumb {
+  background-color: grey;
+  outline: 1px solid slategrey;
+  -webkit-border-radius: 10px;
 }
 .bioData, .medicalHistory{
 	height: 50%;
