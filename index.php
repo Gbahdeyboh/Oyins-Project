@@ -297,7 +297,75 @@
 					</div>
 				</div>
 				<!--Patients medical history appears here //-->
-				<div class="medicalHistory white">gvh</div>
+				<div class="medicalHistory white">
+					<div><h5>&nbsp; &nbsp;Medical History</h5></div>
+					<div class="data">
+						<div class="row">
+							<div class="col s12 m3 l3">
+								<div class="center" style="font-size: 1.3em; border-bottom: 1px solid lightgrey"><p>Diagnosis</p></div>
+								<table class="">
+									<thead>
+										<tr>
+											<th>DATE</th>
+											<th>DIAGNOSE</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>19-04-2017</td>
+											<td>MALARIA</td>
+										</tr>
+										<tr>
+											<td>25-08-2017</td>
+											<td>TYPHOID</td>
+										</tr>
+										<tr>
+											<td>05-01-2018</td>
+											<td>FEVER</td>
+										</tr>
+										<tr>
+											<td>15-03-2018</td>
+											<td>MALARIA</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<div class="col s12 m9 l9">
+								<div class="center" style="font-size: 1.3em; border-bottom: 1px solid lightgrey"><p>Prescribed Drugs</p></div>
+								<table class="responsive-table">
+									<thead>
+										<tr>
+											<th>DATE</th>
+											<th>SYMPTOMS</th>
+											<th>DRUGS</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>25-08-2017  07:04:28</td>
+											<td>Headache, Dizziness, Fatigue</td>
+											<td>Paracetamol, Bico, Chlorophenecol, Paracetamol</td>
+										</tr>
+										<tr>
+											<td>15-10-2017  07:04:28</td>
+											<td>Fatigue, Vomit, Stooling</td>
+											<td>Chlorowquin, Artemether, lumartem, verus, Paracetamol</td>
+										</tr>
+										<tr>
+											<td>04-08-2017  07:04:28</td>
+											<td>Fainting, Dizziness, Fatigue, Vomit</td>
+											<td>Chlororquin, Lumefathren, Arthemether, Bico, Verus, Paracetamol</td>
+										</tr>
+										<tr>
+											<td>01-03-2018  07:04:28</td>
+											<td>Fainting, Dizziness, Fatigue, Vomit, Stooling</td>
+											<td>Chlororquin, Arthemether, Bico, Verus, Paracetamol</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
 			</div>
 		</div>
 	</div>

@@ -266,7 +266,7 @@ body{
 	height: 30px;
 }
 .patientsMedicalHistory{
-	display: none;
+	display: block;
 	margin-top: -5em;
 	width: 99%;
 	height: 85vh;
