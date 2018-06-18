@@ -67,6 +67,8 @@ function showRegister(){
 	displayStatus.hideStuffs(diagnosis);
 	const patientsHistory = document.getElementsByClassName('patientsMedicalHistory')[0];
 	displayStatus.hideStuffs(patientsHistory);
+	const patientsLists = document.getElementsByClassName('patientsRecords')[0];
+	displayStatus.hideStuffs(patientsLists);
 	/*
 	const overlay = document.getElementsByClassName('generalPageOverlay')[0];
 	showStuffs(overlay);
@@ -80,6 +82,8 @@ function logout(){
 	displayStatus.hideStuffs(registrationPage); //hide registration page
 	const patientsHistory = document.getElementsByClassName('patientsMedicalHistory')[0];
 	displayStatus.hideStuffs(patientsHistory);
+	const patientsLists = document.getElementsByClassName('patientsRecords')[0];
+	displayStatus.hideStuffs(patientsLists);
 	/*
 	|=====================================================================================
 	| Display login page after successfull logout                                          |
@@ -102,6 +106,8 @@ function diagnose(){
 	displayStatus.hideStuffs(hideLogin);
 	const patientsHistory = document.getElementsByClassName('patientsMedicalHistory')[0];
 	displayStatus.hideStuffs(patientsHistory);
+	const patientsLists = document.getElementsByClassName('patientsRecords')[0];
+	displayStatus.hideStuffs(patientsLists);
 	//show diagnosis page after every other page has been hidden
 	const diagnosis = document.getElementsByClassName('diagnosis')[0];
 	displayStatus.showStuffs(diagnosis);
@@ -151,6 +157,6 @@ function showPatientsHistory(){
 	const patientsLists = document.getElementsByClassName('patientsRecords')[0];
 	displayStatus.hideStuffs(patientsLists);
 	//show patients medical history
-	const patientsHistory = document.getElementsByClassName('patientsMedicalHistory')[0];
-	displayStatus.showStuffs(patientsHistory);
+	const patientRocords = document.getElementsByClassName('patientsMedicalHistory')[0];
+	displayStatus.showStuffs(patientRocords);
 }
