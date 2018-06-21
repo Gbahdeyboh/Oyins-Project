@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>DESIGN_AND_IMPLEMENTATION_OF_A_MEDICAL_RECORD_MANAGEMENT_SYSTEM</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="utf-8" name="description" content="">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="materialize/css/materialize.min.css">
+	<link rel="stylesheet" type="text/css" href="font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="material-icons.css">
+	<script type="text/javascript" src="js/main.js"></script>
+	<script type="text/javascript" src="js/db_query.js"></script>
+	<script type="text/javascript" src="jquery.min.js"></script>
+	<script type="text/javascript" src="materialize/js/materialize.min.js"></script>
+	<script type="text/javascript" src="fontawesome-all.js"></script>
+</head>
+<body>
+		<!--Login form appears here //-->
+	
+	<!--The main page appears here //-->
+	<div class="body">
+		<!--Heading of body//-->
+		<header class="body_header">
+			<div class="row">
+				<div class="col s1 bar"><i class="fas fa-bars fa-2x bar_icon" onclick="showMenu()"></i></div>
+				<div class="col s11 headingTitle">TOFUNMI MEDICAL CENTER</div>
+			</div>
+		</header>
+		<div class="login-body">
+		<div class="login">
+			<div class="card-panel teal login-head" >Login</div>
+			<div class="login-details">
+				<div id="login_error">Wrong username or password</div>
+					<input type="text" id="username" placeholder="Username">
+					<br />
+					<input type="password" id="password" placeholder="Password">
+					<br />
+					<div class="login-button btn waves-effect waves-light teal darken-1" onclick="login()">Login</div>
+					<br />
+			</div>
+		</div>
+	</div>
+		<!--Slide in menu below //-->
+		<div class="slideInMenu">
+			<!--Close icon for menu//-->
+			<div class="closeIcon"><i class="fas fa-times fa-lg" onclick="hideMenu()"></i></div><br />
+			<ul class="menu">
+				<li class="menu-item waves-effect waves-light" onclick="showRegister()">Register a patient</li>
+				<li class="menu-item waves-effect waves-light" onclick="diagnose()">Diagnose a patient</li>
+				<li class="menu-item waves-effect waves-light" onclick="showPatientsLists()">Patients Records</li>
+			</ul>
+			<div class="logout"><a onclick="logout()">Logout&nbsp;<i class="fas fa-upload fa-lg" style="transform: rotate(-90deg); color: #9e9e9e;"></i></a></div>
+		</div>
+		<!--Every other thing in the page goes in this code block //-->
+		<div class="mainBody">
+			<!--Patients registration page goes here //-->
+			<div class="registrationPage z-depth-2">
+				<div class="registrationHead">Register a patient</div>
+				<div class="registrationBody">
+					<div class="row">
+						<div class="col s12 m6 l6">
+							<div class="input-field">
+								<input type="text" name="" >
+								<label for="text">Name</label>
+							</div>
+						</div>
+						<div class="col s12 m6 l6">
+							<div class="input-field">
+								<input type="number" name="" >
+								<label for="number">Mobile Number</label>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col s12 m6 l6">
+							<div class="input-field">
+								<input type="text" name="" >
+								<label for="date">Date Of Birth</label>
+							</div>
+						</div>
+						<div class="col s12 m6 l6">
+							<div class="input-field">
+								<input type="text" name="" >
+								<label for="text">Address</label>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col s12 m6 l6">
+							<div class="input-field">
+								<input type="text" name="">
+								<label for="text">Genotype</label>
+							</div>
+						</div>
+						<div class="col s12 m6 l6">
+							<div class="input-field">
+								<input type="text" name="" >
+								<label for="text">Blood Group</label>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col s12 m6 l6">
+							<div class="row">
+								<div class="col s4 m4 l4 gend">Gender : </div>
+								<div class="col s4 m4 l4">
+									<input type="radio" name="gender" id="male" class="with-gap">
+									<label for="male">Male</label>
+								</div>
+								<div class="col s4 m4 l4">
+									<input type="radio" name="gender" id="female" class="with-gap">
+									<label for="female">Female</label>
+								</div>
+							</div>
+						</div>
+						<div class="col s12 m6 l6"></div>
+					</div>
+					<div class="row center">
+						<div class="btn waves-effect waves-light registerBtn">Register</div>
+					</div>
+				</div>
+			</div>
+			<!--Diagnose a patient //-->
+			<div class="diagnosis">
+				<div class="diagnosisHead">Diagnose a patient</div>
+				<div class="diagnosisBody">
+					<select class="select" id="diagnosisInput">
+						<option value="">--SELECT A PATIENT--</option>
+						<!--All patients in the database are to be added here //-->
+						<option>Patients 1</option>
+						<option>Patient 2</option>
+						<option>Patient 3</option>
+						<option>Patient 3</option>
+					</select>
+					<br />
+					<div class="row">
+						<input type="text" id="diagnosisInput" class="browser-default" placeholder="Patients Symptoms e.g headache, chest pain etc" />
+					</div>
+					<div class="row">
+						<input type="text" id="diagnosisInput" class="browser-default" placeholder="Prescribed Drugs e.g Paracetamol, arthemeta etc" />
+					</div>
+					<div class="row">
+						<input type="text" id="diagnosisInput" class="browser-default" placeholder="Diagnosed Illness e.g malaria, typhoid etc" />
+					</div>
+					<div class="row center">
+						<div class="btn waves-effect waves-light">Diagnose Patient</div>
+					</div>
+				</div>
+			</div>
+			<!--
+			 *Patients Records are dynamically loaded from database
+			 *If patient gender is male, the male png picture is used as his profile picture
+			 *If patients gender is female, the female png image is used as his profile picture
+			 *When the view link is clicked, a page is displayed that shows the patients profile, health and diagnosis history
+			//-->
+			<div class="patientsRecords">
+				<ul class="collection">
+					<li class="collection-header center teal-text">
+						<h4>PATIENTS</h4>
+					</li>
+                    <li class="collection-item avatar">
+                      <img src="images/female_avatar.png" alt="" class="circle">
+                      <span class="title"><b>Patient One</b></span>
+                      <p>08133333333</p>
+                      <a href="#!" class="secondary-content viewHistory">View</a>
+                    </li>
+                    <li class="collection-item avatar">
+                      <img src="images/male_avatar.png" alt="" class="circle">
+                      <span class="title"><b>Patient Two</b></span>
+                      <p>08133333333</p>
+                      <a href="#!" class="secondary-content viewHistory">View</a>
+                    </li>
+                    <li class="collection-item avatar">
+                      <img src="images/female_avatar.png" alt="" class="circle">
+                      <span class="title"><b>Patient Three</b></span>
+                      <p>08133333333</p>
+                      <a href="#!" class="secondary-content viewHistory">View</a>
+                    </li>
+                    <li class="collection-item avatar">
+                      <img src="images/male_avatar.png" alt="" class="circle">
+                      <span class="title"><b>Patient Four</b></span>
+                      <p>08133333333</p>
+                      <a href="#!" class="secondary-content viewHistory">View</a>
+                    </li>
+                    <li class="collection-item avatar">
+                      <img src="images/male_avatar.png" alt="" class="circle">
+                      <span class="title"><b>Patient Five</b></span>
+                      <p>08133333333</p>
+                      <a href="#!" class="secondary-content viewHistory">View</a>
+                    </li>
+                    <li class="collection-item avatar">
+                      <img src="images/male_avatar.png" alt="" class="circle">
+                      <span class="title"><b>Patient Six</b></span>
+                      <p>08133333333</p>
+                      <a href="#!" class="secondary-content viewHistory">View</a>
+                    </li>
+                    <li class="collection-item avatar">
+                      <img src="images/male_avatar.png" alt="" class="circle">
+                      <span class="title"><b>Patient Seven</b></span>
+                      <p>08133333333</p>
+                      <a href="#!" class="secondary-content viewHistory">View</a>
+                    </li>
+                    <li class="collection-item avatar">
+                      <img src="images/male_avatar.png" alt="" class="circle">
+                      <span class="title"><b>Patient Eight</b></span>
+                      <p>08133333333</p>
+                      <a href="#!" class="secondary-content viewHistory">View</a>
+                    </li>
+                    <li class="collection-item avatar">
+                      <img src="images/male_avatar.png" alt="" class="circle">
+                      <span class="title"><b>Patient Nine</b></span>
+                      <p>08133333333</p>
+                      <a href="#!" class="secondary-content viewHistory">View</a>
+                    </li>
+                    <li class="collection-item avatar">
+                      <img src="images/male_avatar.png" alt="" class="circle">
+                      <span class="title"><b>Patient Ten</b></span>
+                      <p>08133333333</p>
+                      <a href="#!" class="secondary-content viewHistory">View</a>
+                    </li>
+                </ul>
+			</div>
+			<!--Patients diagnosis history and other medical records page //-->
+			<div class="patientsMedicalHistory">
+				<!--Patients brief data appears here //-->
+				<div class="bioData">
+					<div><h5>&nbsp; &nbsp;Bio Data</h5></div>
+					<div class="data">
+						<div class="row">
+							<!--=================
+							|PATIENTS PICTURE|
+							==================================================================
+							|The male avatar picture is used if patient is a male patient     |
+							|The female avatar picture is used if patient is a female patient |
+							==================================================================
+							//-->
+						<div class="col s12 m2 l2 pix">
+							<img src="images/male_avatar.png" alt="Patients_image_here" class="responsive-img patPix">
+						</div>
+						<!--=================
+							|PATIENTS DETAILS|
+							==========================================================
+							|Brief Details about the selected patients appears here   |
+							==========================================================
+							//-->
+						<div class="col s12 m8 l8 white">
+							<!-- Patients Name //-->
+							<div><h5>Olusegun Fatai Alaba</h5></div>
+							<div class="row">
+								<div class="col m6 l6">
+									<div class="row">
+										<div class="col m3 l3"><b>GENDER </b></div>
+										<div class="col m9 l9 white z-depth-1">MALE</div>
+									</div>
+								</div>
+								<div class="col m6 l6">
+									<div class="row">
+										<div class="col m4 l4"><b>Date Of Birth </b></div>
+										<div class="col m8 l8 white z-depth-1">20th Nov 1990</div>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col m6 l6">
+									<div class="row">
+										<div class="col m3 l3"><b>Mobile </b></div>
+										<div class="col m9 l9 white z-depth-1">08133333333</div>
+									</div>
+								</div>
+								<div class="col m6 l6">
+									<div class="row">
+										<div class="col m4 l4"><b>Health Status </b></div>
+										<div class="col m8 l8 white z-depth-1">Good</div>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col m3 l3"><b>Address</b></div>
+								<div class="col m9 l9 z-depth-1" style="height: 40px">34, olaniyan street off femi sanya road ketu Lagos</div>
+							</div>
+						</div>
+						<!--=================
+							|PATIENTS GENOTYPE|
+							==========================================================
+							|The genotype of the selected patients appears here   |
+							==========================================================
+							//-->
+						<div class="col s12 m2 l2 white genotype z-depth-1">
+							<div class="row"><b>Genotype</b></div>
+							<div class="row" style="border: 1px solid lightgrey;">&nbsp; &nbsp;AA</div>
+							<div class="row"><b>Blood Group</b></div>
+							<div class="row" style="border: 1px solid lightgrey;">&nbsp; &nbsp;AB</div>
+							<div class="row"></div>
+							<div class="row"></div>
+						</div>
+						</div>
+					</div>
+				</div>
+				<!--Patients medical history appears here //-->
+				<div class="medicalHistory white">
+					<div><h5>&nbsp; &nbsp;Medical History</h5></div>
+					<div class="data">
+						<div class="row">
+							<div class="col s12 m3 l3">
+								<div class="center" style="font-size: 1.3em; border-bottom: 1px solid lightgrey"><p>Diagnosis</p></div>
+								<table class="">
+									<thead>
+										<tr>
+											<th>DATE</th>
+											<th>DIAGNOSE</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>19-04-2017</td>
+											<td>MALARIA</td>
+										</tr>
+										<tr>
+											<td>25-08-2017</td>
+											<td>TYPHOID</td>
+										</tr>
+										<tr>
+											<td>05-01-2018</td>
+											<td>FEVER</td>
+										</tr>
+										<tr>
+											<td>15-03-2018</td>
+											<td>MALARIA</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<div class="col s12 m9 l9">
+								<div class="center" style="font-size: 1.3em; border-bottom: 1px solid lightgrey"><p>Prescribed Drugs</p></div>
+								<table class="responsive-table">
+									<thead>
+										<tr>
+											<th>DATE</th>
+											<th>SYMPTOMS</th>
+											<th>DRUGS</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>25-08-2017  07:04:28</td>
+											<td>Headache, Dizziness, Fatigue</td>
+											<td>Paracetamol, Bico, Chlorophenecol, Paracetamol</td>
+										</tr>
+										<tr>
+											<td>15-10-2017  07:04:28</td>
+											<td>Fatigue, Vomit, Stooling</td>
+											<td>Chlorowquin, Artemether, lumartem, verus, Paracetamol</td>
+										</tr>
+										<tr>
+											<td>04-08-2017  07:04:28</td>
+											<td>Fainting, Dizziness, Fatigue, Vomit</td>
+											<td>Chlororquin, Lumefathren, Arthemether, Bico, Verus, Paracetamol</td>
+										</tr>
+										<tr>
+											<td>01-03-2018  07:04:28</td>
+											<td>Fainting, Dizziness, Fatigue, Vomit, Stooling</td>
+											<td>Chlororquin, Arthemether, Bico, Verus, Paracetamol</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+			</div>
+		</div>
+	</div>
+	<!-- The below div is used whenever an overlay is used //-->
+	<div class="generalPageOverlay" onclick="hideStuffs(this)"></div>
+</body>
+</html>
