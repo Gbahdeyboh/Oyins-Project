@@ -39,8 +39,9 @@ function login(){
 		displayStatus.showStuffs(slideMenuBar)
 	}
 	else{
-		const errorMessage = document.querySelector("#login_error");
-		displayStatus.showStuffs(errorMessage); //show error message if username or password is wrong
+		const err = document.querySelector("#login_error");
+		displayStatus.showStuffs(err); //show error message if username or password is wrong
+		console.log('Error occured')
 	}
 }
 //display menu when menu icon is clicked
@@ -138,7 +139,7 @@ function showPatientsLists(){
 	const viewHistory = document.getElementsByClassName('viewHistory');
 	let i; 
 	for(i = 0; i < viewHistory.length; i++){
-		viewHistory[i].addEventListener("click", function(){
+		viewHistory[i].addEventListener('click', function(){
 			showPatientsHistory();
 		});
 	}
