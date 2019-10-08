@@ -1,2 +1,2 @@
 # Oyins-Project
-An hospital record management system
+An hospital record management system.
